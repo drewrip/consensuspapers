@@ -10,3 +10,7 @@ The full citation for each paper is in the BibTeX file, and can be viewed in the
 - [Spanner: Google's Globally-Distributed Database](https://static.googleusercontent.com/media/research.google.com/en//archive/spanner-osdi2012.pdf)
 - [SDPaxos: Building Efficient Semi-Decentralized Geo-replicated State Machines](https://www.microsoft.com/en-us/research/uploads/prod/2018/09/172-zhao.pdf)
 - [Mencius: Building Efficient Replicated State Machines for WANs](https://www.usenix.org/legacy/event/osdi08/tech/full_papers/mao/mao.pdf)
+- [Fast Paxos](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tr-2005-112.pdf)
+- [Generalized Consensus and Paxos](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tr-2005-33.pdf)
+- [MDCC: Multi-Data Center Consistency](http://mdcc.cs.berkeley.edu/mdcc.pdf)
+- [On the correctness of Egalitarian Paxos](https://arxiv.org/pdf/1906.10917.pdf)
