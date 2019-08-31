@@ -1,5 +1,7 @@
 # consensuspapers
 
+The full citation for each paper is in the BibTeX file, and can be viewed in the [generated pdf](papers.pdf).
+
 ## Papers:
 
 - [Teaching Rigorous Distributed Systems With Efficient Model Checking](https://homes.cs.washington.edu/~mernst/pubs/dslabs-eurosys2019.pdf)

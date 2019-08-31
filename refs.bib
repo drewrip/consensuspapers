@@ -1,0 +1,142 @@
+@inproceedings{MichaelWAET2019,
+   author = {Ellis Michael and Doug Woos and Thomas Anderson and Michael
+	D. Ernst and and Zach Tatlock},
+   title = {Teaching rigorous distributed systems with efficient model
+	checking},
+   booktitle = {EuroSys},
+   address = {Dresden, Germany},
+   month = mar,
+   year = {2019}
+}
+
+@inproceedings {FuzzyLog,
+	author = {Joshua Lockerman and Jose M. Faleiro and Juno Kim and Soham Sankaran and Daniel J. Abadi and James Aspnes and Siddhartha Sen and Mahesh Balakrishnan},
+	title = {The FuzzyLog: A Partially Ordered Shared Log},
+	booktitle = {13th {USENIX} Symposium on Operating Systems Design and Implementation ({OSDI} 18)},
+	year = {2018},
+	isbn = {978-1-939133-08-3},
+	address = {Carlsbad, CA},
+	pages = {357--372},
+	url = {https://www.usenix.org/conference/osdi18/presentation/lockerman},
+	publisher = {{USENIX} Association},
+	month = oct,
+}
+
+@inproceedings{EPaxos,
+	author = {Moraru, Iulian and Andersen, David G. and Kaminsky, Michael},
+	title = {There is More Consensus in Egalitarian Parliaments},
+	booktitle = {Proceedings of the Twenty-Fourth ACM Symposium on Operating Systems Principles},
+	series = {SOSP '13},
+	year = {2013},
+	isbn = {978-1-4503-2388-8},
+	location = {Farminton, Pennsylvania},
+	pages = {358--372},
+	numpages = {15},
+	url = {http://doi.acm.org/10.1145/2517349.2517350},
+	doi = {10.1145/2517349.2517350},
+	acmid = {2517350},
+	publisher = {ACM},
+	address = {New York, NY, USA},
+}
+
+@inproceedings {Spanner,
+	author = {James C. Corbett and Jeffrey Dean and Michael Epstein and Andrew Fikes and Christopher Frost and JJ Furman and Sanjay Ghemawat and Andrey Gubarev and Christopher Heiser and Peter Hochschild and Wilson Hsieh and Sebastian Kanthak and Eugene Kogan and Hongyi Li and Alexander Lloyd and Sergey Melnik and David Mwaura and David Nagle and Sean Quinlan and Rajesh Rao and Lindsay Rolig and Yasushi Saito and Michal Szymaniak and Christopher Taylor and Ruth Wang and Dale Woodford},
+	title = {Spanner: Google{\textquoteright}s Globally-Distributed Database},
+	booktitle = {10th {USENIX} Symposium on Operating Systems Design and Implementation ({OSDI} 12)},
+	year = {2012},
+	isbn = {978-1-931971-96-6},
+	address = {Hollywood, CA},
+	pages = {261--264},
+	url = {https://www.usenix.org/conference/osdi12/technical-sessions/presentation/corbett},
+	publisher = {{USENIX} Association},
+}
+
+@InProceedings{zhao2018sdpaxos,
+	author = {Zhao, Hanyu and Zhang, Quanlu and Yang, Zhi and Wu, Ming and Dai, Yafei},
+	title = {SDPaxos: Building Efficient Semi-Decentralized Geo-replicated State Machines},
+	booktitle = {ACM Symposium on Cloud Computing 2018 (SoCC)},
+	year = {2018},
+	month = {October},
+	abstract = {Existing state machine replication protocols are confronting two major challenges in geo-replication: (1) limited performance caused by load imbalance, and (2) severe performance degradation in heterogeneous
+	environments or under high-contention workloads. This paper presents a new semi-decentralized approach to addressing both the challenges at the same time. Our protocol, SDPaxos, divides the task of a replication protocol into two parts: durably replicating each command across replicas without global order, and ordering all commands to enforce the consistency guarantee. We decentralize the process of replicating commands, which accounts for the largest proportion of load, to provide high performance. In contrast, we centralize the process of ordering commands, which is lightweight but needs a global view, for better performance stability
+	against heterogeneity or contention. The key novelty lies in that SDPaxos achieves the optimal one-round-trip latency under realistic configurations, despite the two separated steps, replicating and ordering, which are both based on Paxos. We also design a recovery protocol to do rapid failover under failures, and a series of optimizations to boost performance.We show via a prototype implementation the significant advantage of SDPaxos on both throughput and latency, facing different environments and workloads.},
+	publisher = {ACM},
+	url = {https://www.microsoft.com/en-us/research/publication/sdpaxos-building-efficient-semi-decentralized-geo-replicated-state-machines/},
+	edition = {ACM Symposium on Cloud Computing 2018 (SoCC)},
+}
+
+@inproceedings{Mencius,
+	author = {Mao, Yanhua and Junqueira, Flavio P. and Marzullo, Keith},
+	title = {Mencius: Building Efficient Replicated State Machines for WANs},
+	booktitle = {Proceedings of the 8th USENIX Conference on Operating Systems Design and Implementation},
+	series = {OSDI'08},
+	year = {2008},
+	location = {San Diego, California},
+	pages = {369--384},
+	numpages = {16},
+	url = {http://dl.acm.org/citation.cfm?id=1855741.1855767},
+	acmid = {1855767},
+	publisher = {USENIX Association},
+	address = {Berkeley, CA, USA},
+}
+
+@Article{lamport2006fast,
+	author = {Lamport, Leslie},
+	title = {Fast Paxos},
+	year = {2006},
+	month = {October},
+	abstract = {The Paxos consensus algorithm of [122] requires two message delays between when the leader proposes a value and when other processes learn that the value has been chosen. Since inventing Paxos, I had thought that this was the optimal message delay. However, sometime in late 2001 I realized that in most systems that use consensus, values aren't picked out of the air by the system itself; instead, they come from clients. When one counts the message from the client, Paxos requires three message delays. This led me to wonder whether consensus in two message delays, including the client's message, was in fact possible. I proved the lower-bound result announced in [143] that an algorithm that can make progress despite f faults and can achieve consensus in two message delays despite e faults requires more than 2e+f processes. The proof of that result led me pretty quickly to the Fast Paxos algorithm described here. Fast Paxos generalizes the classic Paxos consensus algorithm. It can switch between learning in two or three message delays depending on how many processes are working. More precisely, it can achieve learning in two message delays only in the absence of concurrent conflicting proposals, which [153] shows is the best a general algorithm can do.},
+	url = {https://www.microsoft.com/en-us/research/publication/fast-paxos/},
+	pages = {79-103},
+	journal = {Distributed Computing},
+	volume = {19},
+	edition = {Distributed Computing},
+}
+
+@techreport{lamport2005generalized,
+	author = {Lamport, Leslie},
+	title = {Generalized Consensus and Paxos},
+	year = {2005},
+	month = {March},
+	abstract = {In [153], I proved lower bounds for the number of message delays required to reach consensus. I showed that the best algorithms can reach consensus in the normal case in 2 message delays. This result in turn led me to a new version of the Paxos algorithm of [122] called Fast Paxos, described in [158], that achieves this bound. However, Fast Paxos can take 3 message delays in the event of conflict, when two values are proposed concurrently. I showed in [153] that this was unavoidable in a general algorithm, so this seemed to be the last word.
+
+	It then occurred to me that, in the state-machine approach (introduced in [27]), such conflicting proposals arise because two different commands are issued concurrently by two clients, and both are proposed as command number i. This conflict is necessary only if the two proposed commands do not commute. If they do, then there is no need to order them. This led me to a new kind of agreement problem that requires dynamically changing agreement on a growing partially ordered set of commands. I realized that generalizing from partially ordered sets of commands to a new mathematical structure I call a c-struct leads to a generalized consensus problem that covers both ordinary consensus and this new dynamic agreement problem. I also realized that Fast Paxos can be generalized to solve this new problem. I wrote up these results in March 2004. However, I was in the embarrassing position of having written a paper generalizing Fast Paxos without having written a paper about Fast Paxos. So, I just let the paper sit on my disk.
+
+	I was invited to give a keynote address at the 2004 DSN conference, and I decided to talk about fast and generalized Paxos. Fernando Pedone came up after my talk and introduced himself. He said that he and André Schiper had already published a paper with the same generalization from the command sequences of the state-machine approach to partially ordered sets of commands, together with an algorithm that achieved the same optimal number of message delays in the absence of conflict. It turns out that their algorithm is different from the generalized Paxos algorithm. There are cases in which generalized Paxos takes only 2 message delays while their algorithm takes 3. But the difference in efficiency between the two algorithms is insignificant. The important difference is that generalized Paxos is more elegant.
+
+	I've been sitting on this paper for so long because it doesn't seem right to publish a paper on a generalization of Fast Paxos before publishing something about Fast Paxos itself. Since generalized Paxos is a generalization, this paper also explains Fast Paxos. But people's minds don't work that way. They need to understand Fast Paxos before they can really understand its generalization. So, I figured I would turn this paper into the second part of a long paper or monograph whose first part explains Fast Paxos. However, in recent years I've been discovering new Paxonian results faster than I can write them up. It therefore seems silly not to release a paper that I've already written about one of those results. So, I added a brief discussion of the Pedone-Schiper result and a citation to [153] and am posting the paper here. Now that I have written the Fast Paxos paper and submitted it for publication, I may rewrite this paper as part two of that one.},
+	url = {https://www.microsoft.com/en-us/research/publication/generalized-consensus-and-paxos/},
+	pages = {60},
+	number = {MSR-TR-2005-33},
+}
+
+@inproceedings{MDCC,
+	author = {Kraska, Tim and Pang, Gene and Franklin, Michael J. and Madden, Samuel and Fekete, Alan},
+	title = {MDCC: Multi-data Center Consistency},
+	booktitle = {Proceedings of the 8th ACM European Conference on Computer Systems},
+	series = {EuroSys '13},
+	year = {2013},
+	isbn = {978-1-4503-1994-2},
+	location = {Prague, Czech Republic},
+	pages = {113--126},
+	numpages = {14},
+	url = {http://doi.acm.org/10.1145/2465351.2465363},
+	doi = {10.1145/2465351.2465363},
+	acmid = {2465363},
+	publisher = {ACM},
+	address = {New York, NY, USA},
+}
+
+@article{SutraEPaxos,
+  author    = {Pierre Sutra},
+  title     = {On the correctness of Egalitarian Paxos},
+  journal   = {CoRR},
+  volume    = {abs/1906.10917},
+  year      = {2019},
+  url       = {http://arxiv.org/abs/1906.10917},
+  archivePrefix = {arXiv},
+  eprint    = {1906.10917},
+  timestamp = {Thu, 27 Jun 2019 18:54:51 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/corr/abs-1906-10917},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
