@@ -15,3 +15,4 @@ The full citation for each paper is in the BibTeX file, and can be viewed in the
 - [MDCC: Multi-Data Center Consistency](http://mdcc.cs.berkeley.edu/mdcc.pdf)
 - [On the correctness of Egalitarian Paxos](https://arxiv.org/pdf/1906.10917.pdf)
 - [A Generalised Solution to Distributed Consensus](https://arxiv.org/pdf/1902.06776.pdf)
+- [Verdi: A Framework for Implementing and Formally Verifying Distributed Systems](http://verdi.uwplse.org/verdi.pdf)
