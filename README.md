@@ -16,3 +16,4 @@ The full citation for each paper is in the BibTeX file, and can be viewed in the
 - [On the correctness of Egalitarian Paxos](https://arxiv.org/pdf/1906.10917.pdf)
 - [A Generalised Solution to Distributed Consensus](https://arxiv.org/pdf/1902.06776.pdf)
 - [Verdi: A Framework for Implementing and Formally Verifying Distributed Systems](http://verdi.uwplse.org/verdi.pdf)
+- [Calvin: fast distributed transactions for partitioned database systems](http://cs.yale.edu/homes/thomson/publications/calvin-sigmod12.pdf)
