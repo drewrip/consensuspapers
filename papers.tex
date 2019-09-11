@@ -22,14 +22,25 @@
 	Also included, are methods to reduce the search space for potential faults in the system and to detect errors in realtime.
 
 	%% Howard's Generalized Consensus Solution
-	\item{A Generalised Solution to Distributed Consensus \cite{HowardGeneralized}}
+	\item
+	\textit{A Generalised Solution to Distributed Consensus} \cite{HowardGeneralized}
+
+	This paper attempts to simplify the general consensus problem. It looks at the general consensus problem, and considers how it may be simplified in universal terms with respect to immutable state. They look specifically at the Paxos algorithm as an example. 
+	It is synomomous with consensus, though, can be incredibly difficult to understand. This generalized solution to consensus hopes to quelle some of this confusion.
+	In analysis, they find that quorum requirements of many algorithms could in fact be weakend.
+
 \end{itemize}
 
 \section{Consensus}
 
 \begin{itemize}
 	%% SDPaxos
-	\item{SDPaxos: Building Efficient Semi-Decentralized Geo-replicated State Machines \cite{zhao2018sdpaxos}}
+	\item
+	\textit{SDPaxos: Building Efficient Semi-Decentralized Geo-replicated State Machines} \cite{zhao2018sdpaxos}
+
+	The distributed systems attemping geo-replication have run into multiple notorious problems: mainly load imbalance.
+	SDPaxos proposes an alternative algorithm that is based on Paxos, that separates consensus into two distinct phases, replicating the commands to the nodes, and enforcing a consistent order on the nodes.
+	This is done in an attempt to curb workload imbalance by maintaining optimal one-trip latency in two steps.
 
 	%% Mencius
 	\item{Mencius: building efficient replicated state machines for WANs \cite{Mencius}}
