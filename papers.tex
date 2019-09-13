@@ -43,10 +43,19 @@
 	This is done in an attempt to curb workload imbalance by maintaining optimal one-trip latency in two steps.
 
 	%% Mencius
-	\item{Mencius: building efficient replicated state machines for WANs \cite{Mencius}}
+	\item
+	\textit{Mencius: building efficient replicated state machines for WANs} \cite{Mencius}
+
+	Traditional consensus algorithms, like Paxos, are effective in local contexts, but in WANs, they often suffer the consequence of geographic separation.
+	Often when Paxos, or a version of it, is implemented in a WAN there is a definite increase in network latency, decrease in network throughput and much more prevelant problems with load distribution.
+	Mencius however, is the proposed algorithm that attempts to lessen problems traditionally associated with WANs and consensus.
+	It does this by partitioning sequences (of commits) across multiple nodes in the network, slowly reducing the load on any one specific participant. Mencius adaptively allows nodes with less load to skip their turns and propose changes.
 
 	%% Fast Paxos
-	\item{Fast Paxos \cite{lamport2006fast}}
+	\item
+	\textit{Fast Paxos} \cite{lamport2006fast}
+
+	
 
 	%% Lamport's Generalized Consensus
 	\item{Generalized Consensus and Paxos \cite{lamport2005generalized}}
