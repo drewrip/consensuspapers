@@ -55,16 +55,28 @@
 	\item
 	\textit{Fast Paxos} \cite{lamport2006fast}
 
-	
+	Fast Paxos is a new variant of Paxos from Leslie Lamport that emphasizes speed of consensus.
+	By reducing the quorom size, and implementing a new \textit{fast} round of Paxos, that tests for liveness.
 
 	%% Lamport's Generalized Consensus
-	\item{Generalized Consensus and Paxos \cite{lamport2005generalized}}
+	\item
+	\textit{Generalized Consensus and Paxos} \cite{lamport2005generalized}
+
+	This is generalized way of respresesnting the consensus problem.
+	Lamport boils down the main goals of Paxos algorithm as a set of mathematical generalizations, that can be proven. He also illustrates that main goals for consensus in terms of command-structure sets.
 
 	%% MDCC
-	\item{MDCC: Multi-Data Center Consistency \cite{MDCC}}
+	\item
+	\textit{MDCC: Multi-Data Center Consistency} \cite{MDCC}
+	MDCC is a commit protocol for geographically separated datacenters.
+	Given the increased round-trip time for distant datacenters it becomes imperative to reduce any possible unnecessary messages. MDCC maintains strong consistency while most other similar protocols rely on eventual consistency.
+	MDCC's one round-trip commit time is acheived by piggybacking commit state on transaction messages
+	and by executing Generalized Paxos in parallel on individual records.
+	
 
 	%% Flaw in EPaxos
 	\item{On the correctness of Egalitarian Paxos \cite{SutraEPaxos}}
+	
 
 	%% EPaxos
 	\item{There Is More Consensus in Egalitarian Paxos \cite{EPaxos}}
