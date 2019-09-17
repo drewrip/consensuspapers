@@ -34,6 +34,28 @@
 \section{Consensus}
 
 \begin{itemize}
+
+	\subsection{Improvements on Paxos and State Machine Replication}
+
+	%% Fast Paxos
+	\item
+	\textit{Fast Paxos} \cite{lamport2006fast}
+
+	Fast Paxos is a new variant of Paxos from Leslie Lamport that emphasizes speed of consensus.
+	By reducing the quorom size, and implementing a new \textit{fast} round of Paxos, that tests for liveness.
+
+	%% Lamport's Generalized Consensus
+	\item
+	\textit{Generalized Consensus and Paxos} \cite{lamport2005generalized}
+
+	This is generalized way of respresesnting the consensus problem.
+	Lamport boils down the main goals of Paxos algorithm as a set of mathematical generalizations, that can be proven. He also illustrates that main goals for consensus in terms of command-structure sets.
+
+	%% FuzzyLog
+	\item{The FuzzyLog: A Partially Ordered Shared Log \cite{FuzzyLog}}
+
+	\subsection{Geo-replication and WANs}
+
 	%% SDPaxos
 	\item
 	\textit{SDPaxos: Building Efficient Semi-Decentralized Geo-replicated State Machines} \cite{zhao2018sdpaxos}
@@ -51,20 +73,6 @@
 	Mencius however, is the proposed algorithm that attempts to lessen problems traditionally associated with WANs and consensus.
 	It does this by partitioning sequences (of commits) across multiple nodes in the network, slowly reducing the load on any one specific participant. Mencius adaptively allows nodes with less load to skip their turns and propose changes.
 
-	%% Fast Paxos
-	\item
-	\textit{Fast Paxos} \cite{lamport2006fast}
-
-	Fast Paxos is a new variant of Paxos from Leslie Lamport that emphasizes speed of consensus.
-	By reducing the quorom size, and implementing a new \textit{fast} round of Paxos, that tests for liveness.
-
-	%% Lamport's Generalized Consensus
-	\item
-	\textit{Generalized Consensus and Paxos} \cite{lamport2005generalized}
-
-	This is generalized way of respresesnting the consensus problem.
-	Lamport boils down the main goals of Paxos algorithm as a set of mathematical generalizations, that can be proven. He also illustrates that main goals for consensus in terms of command-structure sets.
-
 	%% MDCC
 	\item
 	\textit{MDCC: Multi-Data Center Consistency} \cite{MDCC}
@@ -75,14 +83,20 @@
 	
 
 	%% Flaw in EPaxos
-	\item{On the correctness of Egalitarian Paxos \cite{SutraEPaxos}}
-	
+	\item
+	\textit{On the correctness of Egalitarian Paxos} \cite{SutraEPaxos}
+
 
 	%% EPaxos
-	\item{There Is More Consensus in Egalitarian Paxos \cite{EPaxos}}
+	\item
+	\textit{There Is More Consensus in Egalitarian Paxos} \cite{EPaxos}
 
-	%% FuzzyLog
-	\item{The FuzzyLog: A Partially Ordered Shared Log \cite{FuzzyLog}}
+	EPaxos is a variant of the Paxos algorithm that builds off previous improvements brough on by projects like Mencius and Generalized Paxos.
+	It looks to improve load balancing across a wide area network, and to improve the network throughput. With EPaxos, a simply majority of replicas need to be non-faulty.
+	This is achieved by removing any leader process, which would serve as a bottleneck. Instead participating nodes have choice as to where they submit.
+	As a result the network load can be much more evenly distributed. Now no network recovery is needed when a leader process is downed, creating greater availablity.
+
+
 \end{itemize}
 
 \section{Databases and Implementations}
