@@ -86,6 +86,9 @@
 	\item
 	\textit{On the correctness of Egalitarian Paxos} \cite{SutraEPaxos}
 
+	Egalitarian Paxos utilizes an execution graph to order commands in the state machines of individual processes.
+	Generally this speeds up latency, as in the most favorable, and most common case, only one round trip time is taken to commit the next command.
+	Though while the algorithm is fundementally correct, there is an error that can potentially lead to inconsistency between replicas present in both the Go implementation and the TLA\textsuperscript{+} specification. 
 
 	%% EPaxos
 	\item
