@@ -12,6 +12,7 @@
 
 	Verdi is a framework for practically verifying distributed systems. Often implementations of distributed systems are
 	too complex to be exhaustively tested, so, Verdi attempts to choose an appropriate fault model to more effectively enumerate bugs and faults.
+	A toolchain is provided to assist in transforming the formal model of the system into implemenation.
 
 	%% Teaching Rigorous DS W/ Efficient Model Checking
 	\item
@@ -52,7 +53,13 @@
 	Lamport boils down the main goals of Paxos algorithm as a set of mathematical generalizations, that can be proven. He also illustrates that main goals for consensus in terms of command-structure sets.
 
 	%% FuzzyLog
-	\item{The FuzzyLog: A Partially Ordered Shared Log \cite{FuzzyLog}}
+	\item
+	\textit{The FuzzyLog: A Partially Ordered Shared Log} \cite{FuzzyLog}
+
+	Given the cost of maintaing a total order with a shared log, FuzzLog proposes using a partial order in order to cut down on the associated expense.
+	In this partially ordered log there exist DAGs of updates, that are uniquely \textit{colored} based on geographic region.
+	Resulting replication is much simpler to achieve, as differently \textit{colored} chains are stored and have to be explicitly updated at each replica.
+
 
 	\subsection{Geo-replication and WANs}
 
@@ -76,6 +83,7 @@
 	%% MDCC
 	\item
 	\textit{MDCC: Multi-Data Center Consistency} \cite{MDCC}
+
 	MDCC is a commit protocol for geographically separated datacenters.
 	Given the increased round-trip time for distant datacenters it becomes imperative to reduce any possible unnecessary messages. MDCC maintains strong consistency while most other similar protocols rely on eventual consistency.
 	MDCC's one round-trip commit time is acheived by piggybacking commit state on transaction messages
@@ -118,6 +126,8 @@
 	\item
 	\textit{Calvin: fast distributed transactions for partitioned database systems} \cite{Calvin}
 
+	Calvin serves as a replication layer that sits on top of a distributed database, attempting to efficiently and cost effectively allow for distributed transactions and easy scaling. The main goal of Calvin, is to make it possible to turn a generic unreplicated database into a fully ACID complaint distributed database.
+	To do so, it implements multiple layers for sequencing and ordering transactions into a serial order in a global log. This global log is then used to ensure a proper ordering for each individual partion.
 
 \end{itemize}
 
