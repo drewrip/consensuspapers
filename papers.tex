@@ -105,11 +105,20 @@
 \section{Databases and Implementations}
 
 \begin{itemize}
+
 	%% Spanner
-	\item{Spanner: Google's Globally-Distributed Database \cite{Spanner}}
+	\item
+	\textit{Spanner: Google's Globally-Distributed Database} \cite{Spanner}
+
+	Spanner is a distributed database developed at Google, with the goal of highly available data in different geographic regions.
+	The database is also sharded into multiple Paxos replicas in order to better horizontally scale. Data in Spanner is automatically resharded to balance load.
+	Using their novel \textit{TrueTime} API, Spanner shows how it can practically guarantee consistency on top of availability with its hyper realistic clock.
 
 	%% Calvin
-	\item{Calvin: fast distributed transactions for partitioned database systems \cite{Calvin}}
+	\item
+	\textit{Calvin: fast distributed transactions for partitioned database systems} \cite{Calvin}
+
+
 \end{itemize}
 
 \bibliographystyle{acm}
