@@ -22,6 +22,17 @@
 	This paper purposes a model that allows students, or developers with fewer resources at their disposal to efficiently verify their systems and visually debug them.
 	Also included, are methods to reduce the search space for potential faults in the system and to detect errors in realtime.
 
+	%% SAMC
+	\item
+	\textit{SAMC: Semantic-Aware Model Checking for Fast Discovery of Deep Bugs in Cloud Systems} \cite{SAMC}
+
+	
+\end{itemize}
+
+\section{Generalizations}
+
+\begin{itemize}
+
 	%% Howard's Generalized Consensus Solution
 	\item
 	\textit{A Generalised Solution to Distributed Consensus} \cite{HowardGeneralized}
@@ -29,6 +40,14 @@
 	This paper attempts to simplify the general consensus problem. It looks at the general consensus problem, and considers how it may be simplified in universal terms with respect to immutable state. They look specifically at the Paxos algorithm as an example. 
 	It is synomomous with consensus, though, can be incredibly difficult to understand. This generalized solution to consensus hopes to quelle some of this confusion.
 	In analysis, they find that quorum requirements of many algorithms could in fact be weakend.
+
+	%% Lamport's Generalized Consensus
+	\item
+	\textit{Generalized Consensus and Paxos} \cite{lamport2005generalized}
+
+	This is generalized way of respresesnting the consensus problem.
+	Lamport boils down the main goals of Paxos algorithm as a set of mathematical generalizations, that can be proven. He also illustrates that main goals for consensus in terms of command-structure sets.
+
 
 \end{itemize}
 
@@ -44,13 +63,6 @@
 
 	Fast Paxos is a new variant of Paxos from Leslie Lamport that emphasizes speed of consensus.
 	By reducing the quorom size, and implementing a new \textit{fast} round of Paxos, that tests for liveness.
-
-	%% Lamport's Generalized Consensus
-	\item
-	\textit{Generalized Consensus and Paxos} \cite{lamport2005generalized}
-
-	This is generalized way of respresesnting the consensus problem.
-	Lamport boils down the main goals of Paxos algorithm as a set of mathematical generalizations, that can be proven. He also illustrates that main goals for consensus in terms of command-structure sets.
 
 	%% FuzzyLog
 	\item
