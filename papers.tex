@@ -22,6 +22,8 @@
 	This paper purposes a model that allows students, or developers with fewer resources at their disposal to efficiently verify their systems and visually debug them.
 	Also included, are methods to reduce the search space for potential faults in the system and to detect errors in realtime.
 
+	\subsection{Reducing Fault Search Space}
+
 	%% SAMC
 	\item
 	\textit{SAMC: Semantic-Aware Model Checking for Fast Discovery of Deep Bugs in Cloud Systems} \cite{SAMC}
@@ -30,6 +32,12 @@
 	It uses systematic methods to reduce the verification necessary, using no randomness. 
 	SAMC interoduces four novel policies to reduce state-space: local message independence(LMI), crash-message independence(CMI), crash recovery symmetry(CRS), and reboot synchronization symmetry(RSS).
 
+	\item
+	\textit{Lineage-driven Fault Injection} \cite{Molly}
+
+	A common approach to detecting faults in a distributed system is to randomly inject failures or malformed messages into the network.
+	However, with this approach it is very unlikely that we can detect and rarely occuring errors, and moreover it is important to note that this random injection can never guarantee to enumerate all erors in the system.
+	The proposed solution is Molly: a fault injection technique that utilizes a lineage based approach to discover bugs based on what possible errors could have affected the correct outcomes of the system.
 	
 \end{itemize}
 

@@ -18,3 +18,4 @@ The full citation for each paper is in the BibTeX file, and can be viewed in the
 - [Verdi: A Framework for Implementing and Formally Verifying Distributed Systems](http://verdi.uwplse.org/verdi.pdf)
 - [Calvin: fast distributed transactions for partitioned database systems](http://cs.yale.edu/homes/thomson/publications/calvin-sigmod12.pdf)
 - [SAMC: Semantic-Aware Model Checking for Fast Discovery of Deep Bugs in Cloud Systems](https://www.usenix.org/system/files/conference/osdi14/osdi14-paper-leesatapornwongsa.pdf)
+- [Lineage-driven Fault Injection](https://people.ucsc.edu/~palvaro/molly.pdf)
