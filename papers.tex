@@ -6,6 +6,9 @@
 \section{Verification and Checking}
 
 \begin{itemize}
+
+	\subsection{Analysis and Checking Frameworks}
+	
 	%% Verdi
 	\item
 	\textit{Verdi: A Framework for Implementing and Formally Verifying Distributed Systems} \cite{Verdi}
@@ -21,6 +24,12 @@
 	While exhaustively determining bugs in a distributed system can be incredibly effective, it can, at the same time, be incredibly costly for developers.
 	This paper purposes a model that allows students, or developers with fewer resources at their disposal to efficiently verify their systems and visually debug them.
 	Also included, are methods to reduce the search space for potential faults in the system and to detect errors in realtime.
+
+	%% NEAT
+	\item
+	\textit{An Analysis of Network-Partitioning Failures in Cloud Systems} \cite{NEAT}
+
+
 
 	\subsection{Reducing Fault Search Space}
 
@@ -130,6 +139,12 @@
 	It looks to improve load balancing across a wide area network, and to improve the network throughput. With EPaxos, a simply majority of replicas need to be non-faulty.
 	This is achieved by removing any leader process, which would serve as a bottleneck. Instead participating nodes have choice as to where they submit.
 	As a result the network load can be much more evenly distributed. Now no network recovery is needed when a leader process is downed, creating greater availablity.
+
+	%% COPS
+	\item
+	\textit{Don't Settle for Eventual: Scalable Causal Consistency for Wide-area Storage with COPS} \cite{LloydCOPS}
+
+
 
 
 \end{itemize}
