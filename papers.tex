@@ -29,7 +29,9 @@
 	\item
 	\textit{An Analysis of Network-Partitioning Failures in Cloud Systems} \cite{NEAT}
 
-
+	In an analysis of many popular distributed systems, they found that many, while extensively tested, still have many faults present.
+	Many of these faults require little to no user input, and are present once a network partition occurs. With this analysis, NEAT is created.
+	NEAT is a testing framework that intelligently injects network-parition faults into a distributed system in order to more efficiently and accurately identify potential errors in the implementation of a distributed system.
 
 	\subsection{Reducing Fault Search Space}
 
@@ -84,6 +86,7 @@
 
 	Fast Paxos is a new variant of Paxos from Leslie Lamport that emphasizes speed of consensus.
 	By reducing the quorom size, and implementing a new \textit{fast} round of Paxos, that tests for liveness.
+	In Fast Paxos rounds are split into Fast, and Classic rounds. During fast rounds, clients may submit proposals directly to the acceptors, though requiring a larger quorum of acceptors.
 
 	%% FuzzyLog
 	\item
@@ -144,6 +147,9 @@
 	\item
 	\textit{Don't Settle for Eventual: Scalable Causal Consistency for Wide-area Storage with COPS} \cite{LloydCOPS}
 
+	COPS is a distributed key-value store that implements the newly defined \textit{causal}+, a strong consistency level for WANs.
+	In the past many protocols have elected to use a weaker consistency level for the benefit to availability and throughput, but a stronger consistency makes reasoning about the behavior of a system much easier for developers.
+	To make wide-area distributed systems more practical and scalable, COPS continually checks causal dependencies in a local cluster before exposing writes.
 
 
 
