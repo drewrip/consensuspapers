@@ -15,7 +15,7 @@
 
 	Verdi is a framework for practically verifying distributed systems. Often implementations of distributed systems are
 	too complex to be exhaustively tested, so, Verdi attempts to choose an appropriate fault model to more effectively enumerate bugs and faults.
-	A toolchain is provided to assist in transforming the formal model of the system into implemenation.
+	A toolchain is provided to assist in transforming the formal model of the system into implementation.
 
 	%% Teaching Rigorous DS W/ Efficient Model Checking
 	\item
@@ -31,7 +31,7 @@
 
 	In an analysis of many popular distributed systems, they found that many, while extensively tested, still have numerous faults present.
 	Many of these faults require little to no user input, and are present once a network partition occurs. With this analysis, NEAT is created.
-	NEAT is a testing framework that intelligently injects network-parition faults into a distributed system in order to more efficiently and accurately identify potential errors in the implementation.
+	NEAT is a testing framework that intelligently injects network-partition faults into a distributed system in order to more efficiently and accurately identify potential errors in the implementation.
 
 	\subsection{Reducing Fault Search Space}
 
@@ -41,13 +41,13 @@
 
 	Model checking is pertinent for ensuring the safety of large cloud systems, however doing so in implementation is incredibly expensive. SAMC proposes policies to simplify the state of model checking.
 	It uses systematic methods to reduce the verification necessary, with no randomness. 
-	SAMC interoduces four novel policies to reduce state-space: local message independence(LMI), crash-message independence(CMI), crash recovery symmetry(CRS), and reboot synchronization symmetry(RSS).
+	SAMC introduces four novel policies to reduce state-space: local message independence(LMI), crash-message independence(CMI), crash recovery symmetry(CRS), and reboot synchronization symmetry(RSS).
 
 	\item
 	\textit{Lineage-driven Fault Injection} \cite{Molly}
 
 	A common approach to detecting faults in a distributed system is to randomly inject failures or malformed messages into the network.
-	However, with this approach it is very unlikely that we can detect rarely occuring errors, and moreover it is important to note that this random injection can never guarantee to enumerate all errors in the system.
+	However, with this approach it is very unlikely that we can detect rarely occurring errors, and moreover it is important to note that this random injection can never guarantee to enumerate all errors in the system.
 	The proposed solution is Molly: a fault injection technique that utilizes a lineage based approach to discover bugs based on what possible errors could have affected the correct outcomes of the system.
 	
 \end{itemize}
@@ -61,14 +61,14 @@
 	\textit{A Generalised Solution to Distributed Consensus} \cite{HowardGeneralized}
 
 	This paper attempts to simplify the general consensus problem. It looks at the general consensus problem, and considers how it may be simplified in universal terms with respect to immutable state. They look specifically at the Paxos algorithm as an example. 
-	It is synomomous with consensus, though, can be incredibly difficult to understand. This generalized solution to consensus hopes to quelle some of this confusion.
-	In analysis, they find that quorum requirements of many algorithms could in fact be weakend.
+	It is synonymous with consensus, though, can be incredibly difficult to understand. This generalized solution to consensus hopes to quell some of this confusion.
+	In analysis, they find that quorum requirements of many algorithms could in fact be weakened.
 
 	%% Lamport's Generalized Consensus
 	\item
 	\textit{Generalized Consensus and Paxos} \cite{lamport2005generalized}
 
-	This is a generalized way of respresesnting the consensus problem.
+	This is a generalized way of representing the consensus problem.
 	Lamport boils down the main goals of the Paxos algorithm as a set of mathematical generalizations, that can be proven. He also illustrates that main goals for consensus in terms of command-structure sets.
 
 
@@ -85,14 +85,14 @@
 	\textit{Fast Paxos} \cite{lamport2006fast}
 
 	Fast Paxos is a new variant of Paxos from Leslie Lamport that emphasizes speed of consensus.
-	By reducing the quorom size, and implementing a new \textit{fast} round of Paxos, that tests for liveness.
+	By reducing the quorum size, and implementing a new \textit{fast} round of Paxos, that tests for liveness.
 	In Fast Paxos rounds are split into Fast, and Classic rounds. During fast rounds, clients may submit proposals directly to the acceptors, though requiring a larger quorum of acceptors.
 
 	%% FuzzyLog
 	\item
 	\textit{The FuzzyLog: A Partially Ordered Shared Log} \cite{FuzzyLog}
 
-	Given the cost of maintaing a total order with a shared log, FuzzLog proposes using a partial order in order to cut down on the associated expense.
+	Given the cost of maintaining a total order with a shared log, FuzzLog proposes using a partial order in order to cut down on the associated expense.
 	In this partially ordered log there exist DAGs of updates, that are uniquely \textit{colored} based on geographic region.
 	Resulting replication is much simpler to achieve, as differently \textit{colored} chains are stored and have to be explicitly updated at each replica.
 
@@ -103,7 +103,7 @@
 	\item
 	\textit{SDPaxos: Building Efficient Semi-Decentralized Geo-replicated State Machines} \cite{zhao2018sdpaxos}
 
-	Systems attemping geo-replication have run into multiple notorious problems: mainly load imbalance.
+	Systems attempting geo-replication have run into multiple notorious problems: mainly load imbalance.
 	SDPaxos proposes an alternative algorithm that is based on Paxos, that separates consensus into two distinct phases, replicating the commands to the nodes, and enforcing a consistent order on the nodes.
 	This is done in an attempt to curb workload imbalance by maintaining optimal one-trip latency in two steps.
 
@@ -112,7 +112,7 @@
 	\textit{Mencius: building efficient replicated state machines for WANs} \cite{Mencius}
 
 	Traditional consensus algorithms, like Paxos, are effective in local contexts, but in WANs they often suffer the consequence of geographic separation.
-	Often when Paxos, or a version of it, is implemented in a WAN there is a definite increase in network latency, decrease in network throughput and much more prevelant problems with load distribution.
+	Often when Paxos, or a version of it, is implemented in a WAN there is a definite increase in network latency, decrease in network throughput and much more prevalent problems with load distribution.
 	Mencius however, is the proposed algorithm that attempts to lessen problems traditionally associated with WANs and consensus.
 	It does this by partitioning sequences (of commits) across multiple nodes in the network, slowly reducing the load on any one specific participant. Mencius adaptively allows nodes with less load to skip their turns and propose changes.
 
@@ -132,7 +132,7 @@
 
 	Egalitarian Paxos utilizes an execution graph to order commands in the state machines of individual processes.
 	Generally this speeds up latency, as in the most favorable and most common case, only one round trip time is taken to commit the next command.
-	Though while the algorithm is fundementally correct, there is an error that can potentially lead to inconsistency between replicas present in both the Go implementation and the TLA\textsuperscript{+} specification. 
+	Though while the algorithm is fundamentally correct, there is an error that can potentially lead to inconsistency between replicas present in both the Go implementation and the TLA\textsuperscript{+} specification. 
 
 	%% EPaxos
 	\item
@@ -141,7 +141,7 @@
 	EPaxos is a variant of the Paxos algorithm that builds off previous improvements brought on by projects like Mencius and Generalized Paxos.
 	It looks to improve load balancing across a wide area network and to improve the network throughput. With EPaxos, a simply majority of replicas need to be non-faulty.
 	This is achieved by removing any leader process, which would serve as a bottleneck. Instead participating nodes have choice as to where they submit.
-	As a result the network load can be much more evenly distributed. Now no network recovery is needed when a leader process is downed, creating greater availablity.
+	As a result the network load can be much more evenly distributed. Now no network recovery is needed when a leader process is downed, creating greater availability.
 
 	%% COPS
 	\item
@@ -172,7 +172,7 @@
 	\textit{Calvin: fast distributed transactions for partitioned database systems} \cite{Calvin}
 
 	Calvin serves as a replication layer that sits on top of a distributed database, attempting to efficiently and cost effectively allow for distributed transactions and easy scaling. The main goal of Calvin is to make it possible to turn a generic unreplicated database into a fully ACID complaint distributed database.
-	To do so, it implements multiple layers for sequencing and ordering transactions into a serial order in a global log. This global log is then used to ensure a proper ordering for each individual partion.
+	To do so, it implements multiple layers for sequencing and ordering transactions into a serial order in a global log. This global log is then used to ensure a proper ordering for each individual partition.
 
 \end{itemize}
 
