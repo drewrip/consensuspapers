@@ -1,4 +1,7 @@
 \documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+
 \begin{document}
 
 \title{An Overview of Distributed Consensus}
@@ -185,7 +188,42 @@
 
 The fundamental problem of consensus can be represented with the Byzantine Generals Problem \cite{LamportGeneralsProblem}.
 
+\tikzstyle{army} = [rectangle, text centered, minimum height=1cm, minimum width=2cm, draw=black]
+\tikzstyle{city} = [circle, text centered, minimum width=1cm, draw=black]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\begin{center}
+	\begin{tikzpicture}[node distance=1.5cm]
+	\node (con) [city] {Constantinople};
+	\node (armyA) [army, below of=con, yshift=-1cm, xshift=-1.75cm] {Army A};
+	\node (armyB) [army, right of=armyA, xshift=2cm] {Army B};
+	\draw [arrow] (armyA) -- node[anchor=south] {Msg A} (armyB);
+	\draw [arrow, yshift=-.5cm] (armyB) -- node[anchor=south] {Msg B} (armyA);
+	\end{tikzpicture}
+\end{center}
+
 \section{Breakdown of Consensus Algorithms}
+
+	\begin{center}
+		\begin{tabular}{|c c c c|}
+		\hline
+		Algorithm & Date & Local/WAN & Citation \\
+		\hline
+		\hline
+		Raft & 2014 & Local & \cite{Raft}\\
+		\hline
+		Generalized Paxos & 2005 & Local & \cite{lamport2005generalized}\\
+		\hline
+		\hline
+		EPaxos & 2013 & WAN & \cite{EPaxos}\\
+		\hline
+		SDPaxos & 2018 & WAN & \cite{zhao2018sdpaxos}\\
+		\hline
+		Mencius & 2008 & WAN & \cite{Mencius}\\
+
+		\hline
+		\end{tabular}
+	\end{center}
 
 \section{Consensus over WANs}
 
