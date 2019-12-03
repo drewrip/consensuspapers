@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric, arrows}
+\usetikzlibrary{calc}
 
 \begin{document}
 
@@ -188,17 +189,18 @@
 
 The fundamental problem of consensus can be represented with the Byzantine Generals Problem \cite{LamportGeneralsProblem}.
 
-\tikzstyle{army} = [rectangle, text centered, minimum height=1cm, minimum width=2cm, draw=black]
+\tikzstyle{army} = [rectangle, text centered, minimum height=1.5cm, minimum width=2cm, draw=black]
 \tikzstyle{city} = [circle, text centered, minimum width=1cm, draw=black]
 \tikzstyle{arrow} = [thick,->,>=stealth]
 
 \begin{center}
 	\begin{tikzpicture}[node distance=1.5cm]
 	\node (con) [city] {Constantinople};
-	\node (armyA) [army, below of=con, yshift=-1cm, xshift=-1.75cm] {Army A};
-	\node (armyB) [army, right of=armyA, xshift=2cm] {Army B};
-	\draw [arrow] (armyA) -- node[anchor=south] {Msg A} (armyB);
-	\draw [arrow, yshift=-.5cm] (armyB) -- node[anchor=south] {Msg B} (armyA);
+	\node (armyA) [army, below left of=con, yshift=-1.5cm, xshift=-1.25cm] {Army A};
+	\node (armyB) [army, below right of=con, yshift=-1.5cm, xshift=1.25cm] {Army B};
+	\draw [transform canvas={yshift=0.2cm}, arrow] (armyA.east) -- node[anchor=south] {Msg A} (armyB.west);
+	\draw [transform canvas={yshift=-0.5cm}, arrow] (armyB.west) -- node[anchor=south] {Msg B} (armyA.east);
+	\draw [arrow] (armyA.north) -- node[anchor=south] {Attack} (con);
 	\end{tikzpicture}
 \end{center}
 
