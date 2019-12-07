@@ -200,7 +200,8 @@ The fundamental problem of consensus can be represented with the Byzantine Gener
 	\node (armyB) [army, below right of=con, yshift=-1.5cm, xshift=1.25cm] {Army B};
 	\draw [transform canvas={yshift=0.2cm}, arrow] (armyA.east) -- node[anchor=south] {Msg A} (armyB.west);
 	\draw [transform canvas={yshift=-0.5cm}, arrow] (armyB.west) -- node[anchor=south] {Msg B} (armyA.east);
-	\draw [arrow] (armyA.north) -- node[anchor=south] {Attack} (con);
+	\draw [arrow] (armyA.north) -- node[above, sloped] {Attack} (con);
+	\draw [arrow] (armyB.north) -- node[above, sloped] {Attack} (con);
 	\end{tikzpicture}
 \end{center}
 
