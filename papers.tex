@@ -191,19 +191,65 @@ The fundamental problem of consensus can be represented with the Byzantine Gener
 
 \tikzstyle{army} = [rectangle, text centered, minimum height=1.5cm, minimum width=2cm, draw=black]
 \tikzstyle{city} = [circle, text centered, minimum width=1cm, draw=black]
+\tikzstyle{spy} = [rectangle, text centered, minimum width=1cm, minimum height=.75cm, draw=black]
 \tikzstyle{arrow} = [thick,->,>=stealth]
 
-\begin{center}
-	\begin{tikzpicture}[node distance=1.5cm]
-	\node (con) [city] {Constantinople};
-	\node (armyA) [army, below left of=con, yshift=-1.5cm, xshift=-1.25cm] {Army A};
-	\node (armyB) [army, below right of=con, yshift=-1.5cm, xshift=1.25cm] {Army B};
-	\draw [transform canvas={yshift=0.2cm}, arrow] (armyA.east) -- node[anchor=south] {Msg A} (armyB.west);
-	\draw [transform canvas={yshift=-0.5cm}, arrow] (armyB.west) -- node[anchor=south] {Msg B} (armyA.east);
-	\draw [arrow] (armyA.north) -- node[above, sloped] {Attack} (con);
-	\draw [arrow] (armyB.north) -- node[above, sloped] {Attack} (con);
-	\end{tikzpicture}
-\end{center}
+
+\begin{figure}[h]
+	\begin{center}
+		\begin{tikzpicture}[node distance=1.5cm]
+		\node (con) [city] {Constantinople};
+		\node (armyA) [army, below left of=con, yshift=-1.5cm, xshift=-1.25cm] {Army A};
+		\node (armyB) [army, below right of=con, yshift=-1.5cm, xshift=1.25cm] {Army B};
+		\draw [transform canvas={yshift=0.2cm}, arrow] (armyA.east) -- node[anchor=south] {$M_{1}$} (armyB.west);
+		\draw [transform canvas={yshift=-0.5cm}, arrow] (armyB.west) -- node[anchor=south] {$M_{2}$} (armyA.east);
+		\draw [arrow] (armyA.north) -- node[above, sloped] {Attack} (con);
+		\draw [arrow] (armyB.north) -- node[above, sloped] {Attack} (con);
+		\end{tikzpicture}
+
+		\caption[title]{Illustration of the Byzantine Generals problem for two armies A \& B}
+	\end{center}
+\end{figure}
+
+To illustrate the fundemental problem that consensus algorithms are trying to solve, we can imagine a hypothetical situation where two armies $A$ and $B$ are attempting to attack the city of Constantinople.
+This is classically called the Byzantine Generals problem.
+
+Imagine that two armies at once are required to attack at once if they would like to successfully take Constantinople, so both $A$ and $B$ need to coordinate if they want wage a successful attack on the city.
+Both armies also have the ability to communicate, but only with messengers.
+In an attempt to start planning for their siege, army $A$ sends $M_{1}$ to army $B$ with the following message: \\
+
+\textit{Attack Constantinople at 02:00.}
+
+\textit{- Army A} \\
+
+After receiving $M_{1}$, army $B$ agrees to the plan, so to confirm with army $A$ they reply in agreement with $M_{2}$: \\
+
+\textit{Sounds like a plan. Attacking at 02:00.}
+
+\textit{- Army B}
+
+
+At the surface level everything looks simple here. Army $A$ and $B$ have a simple process on planning out their attack on the city.
+However, this is assuming they have uninterrupted communication. 
+
+
+\begin{figure}[h]
+	\begin{center}
+		\begin{tikzpicture}[node distance=1.5cm]
+		\node (con) [city] {Constantinople};
+		\node (armyA) [army, below left of=con, yshift=-1.5cm, xshift=-1.25cm] {Army A};
+		\node (armyB) [army, below right of=con, yshift=-1.5cm, xshift=1.25cm] {Army B};
+		\node (spy) [spy, below of=con, yshift=-1cm] {Spy};
+		\draw [transform canvas={yshift=0.2cm}, arrow] (armyA.east) -- node[anchor=south] {$M_{1}$} (spy.west);
+		\draw [transform canvas={yshift=-0.5cm}, arrow] (spy.west) -- node[anchor=south] {$M_{2}$} (armyA.east);
+		\draw [arrow] (armyA.north) -- node[above, sloped] {Attack} (con);
+		\draw [arrow] (armyB.north) -- node[above, sloped] {Attack} (con);
+		\end{tikzpicture}
+
+		\caption[title]{The Risks in The Byzantine Generals problem}
+	\end{center}
+\end{figure}
+
 
 \section{Breakdown of Consensus Algorithms}
 
